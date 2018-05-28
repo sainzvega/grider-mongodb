@@ -6,8 +6,8 @@ const UserSchema = new Schema({
     name: {
         type: String,
         validate: {
-            validator: name => name.length > 2,
-            message: 'Name must be at least 2 characters'
+            validator: (name) => name.length > 2,
+            message: 'Name must be longer than 2 characters.'
         },
         required: [true, 'Name is required.']
     },
@@ -20,7 +20,7 @@ const UserSchema = new Schema({
 });
 
 // Virtual types === computed props
-UserSchema.virtual('postCount').get(function() {
+UserSchema.virtual('postCount').get(function () {
     return this.posts.length;
 });
 
