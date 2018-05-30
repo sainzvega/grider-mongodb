@@ -3,6 +3,11 @@
   "rules": {
     "arrow-body-style": 0,
     "no-underscore-dangle": 0,
-    "radix": 0
+    "radix": 0,
+    "quotes": "warn"
+  },
+  "env": {
+    "browser": true,
+    "node": true
   }
 }
