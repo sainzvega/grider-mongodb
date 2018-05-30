@@ -31,9 +31,13 @@ const buildQuery = criteria => {
   const query = {};
 
   if (criteria.name) {
-    query.$text = {
-      $search: criteria.name
+    query.name = {
+      $regex: criteria.name,
+      $options: 'si'
     };
+    // query.$text = {
+    //   $search: criteria.name
+    // };
   }
 
   if (criteria.age) {
