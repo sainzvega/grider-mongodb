@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import mongoose from 'mongoose';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import ReduxThunk from 'redux-thunk';
 import { Db, Server } from 'mongodb';
 import reducers from './reducers';
 import Routes from './router';
-import mongoose from 'mongoose';
 import './seeds';
 
 mongoose.Promise = Promise;
