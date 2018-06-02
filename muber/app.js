@@ -1,8 +1,13 @@
 const express = require("express");
-const router = require('./routes/routes'); // TODO: change to index.js
-
+const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
+const routes = require("./routes/routes"); 
 const app = express();
 
-router(app);
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost/muber');
+
+app.use(bodyParser.json());
+routes(app);
 
 module.exports = app;
